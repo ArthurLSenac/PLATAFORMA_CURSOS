@@ -35,4 +35,4 @@ Entre com o administrador que você definiu no `.env`. As contas fictícias da b
 
 ## Credenciais
 
-Não existe senha padrão do administrador. Cada instalação deve definir a própria senha. Não envie `.env`, arquivos de upload nem cópias do banco ao repositório público.
+Não existe senha padrão do administrador. Cada instalação deve definir a própria senha.
