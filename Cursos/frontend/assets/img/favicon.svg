@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <title>Lumina Academy</title>
+  <defs>
+    <linearGradient id="lumina" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7c5cff"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="url(#lumina)"/>
+  <rect x="0.5" y="0.5" width="63" height="63" rx="17.5" stroke="#fff" stroke-opacity=".2"/>
+  <g transform="translate(9 9) scale(1.4375)" fill="#fff">
+    <path d="M5 4h6v20h15v5H5z"/>
+    <path d="m24 2 2.1 5.9L32 10l-5.9 2.1L24 18l-2.1-5.9L16 10l5.9-2.1z"/>
+  </g>
+</svg>

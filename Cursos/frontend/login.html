@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="escuro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <script src="assets/js/tema.js"></script>
+    <title>Entrar — Lumina Academy</title>
+    <script type="module" src="assets/js/paginas/login.js"></script>
+</head>
+<body>
+    <div class="auth">
+        <aside class="auth__arte" id="arte"></aside>
+        <main class="auth__formulario">
+            <div class="auth__topo" id="auth-topo"></div>
+            <div class="auth__cartao">
+                <h1>Bem-vindo de volta</h1>
+                <p>Entre com seu e-mail e senha para acessar seus cursos.</p>
+                <div id="mensagem" aria-live="assertive"></div>
+                <form id="form-login" novalidate>
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input class="entrada" type="email" id="email" name="email" autocomplete="email" placeholder="voce@exemplo.com" required>
+                    </div>
+                    <div class="campo">
+                        <label for="senha">Senha</label>
+                        <div class="entrada-icone entrada-icone--direita">
+                            <input class="entrada" type="password" id="senha" name="senha" autocomplete="current-password" placeholder="Sua senha" required>
+                            <button type="button" class="btn btn--fantasma btn--icone btn--sm acao-entrada" id="mostrar-senha" aria-label="Mostrar senha"></button>
+                        </div>
+                        <small id="aviso-caps" hidden>Caps Lock está ativado.</small>
+                    </div>
+                    <button class="btn btn--primario btn--lg btn--bloco" type="submit" id="btn-entrar">Entrar</button>
+                </form>
+                <p class="auth__rodape" id="link-cadastro">Ainda não tem conta? <a href="cadastro.html">Criar conta</a></p>
+                <div class="contas-demo" id="contas-demo"></div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

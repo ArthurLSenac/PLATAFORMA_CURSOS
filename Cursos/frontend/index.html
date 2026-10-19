@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="escuro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Academy — Cursos online</title>
+    <meta name="description" content="Plataforma de cursos online com módulos, aulas em vídeo, materiais de apoio, acompanhamento de progresso e certificado de conclusão.">
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <script src="assets/js/tema.js"></script>
+    <script type="module" src="assets/js/paginas/inicio.js"></script>
+</head>
+<body>
+    <header id="topo" class="topo"></header>
+
+    <main>
+        <!-- HERO (título e subtítulo vêm das configurações do admin) -->
+        <section class="hero">
+            <div class="container hero__grade">
+                <div>
+                    <span class="pilula"><span class="pilula__marca">Novo</span> Trilhas completas, do básico ao avançado</span>
+                    <h1 id="hero-titulo">Domine as habilidades que o mercado procura</h1>
+                    <p class="hero__subtitulo" id="hero-subtitulo"></p>
+                    <div class="hero__acoes" id="hero-acoes"></div>
+                    <div class="hero__prova">
+                        <div class="avatares" aria-hidden="true">
+                            <span class="avatar">AS</span><span class="avatar">BL</span><span class="avatar">CM</span><span class="avatar">EP</span>
+                        </div>
+                        <div>
+                            <div class="estrelas" id="estrelas" aria-hidden="true"></div>
+                            <span id="prova-texto">Alunos aprendendo todos os dias</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ilustração feita só com HTML/CSS -->
+                <div class="vitrine" aria-hidden="true">
+                    <div class="flutuante flutuante--progresso">
+                        <span class="flutuante__icone" id="icone-progresso"></span>
+                        <div><strong>78% concluído</strong><span>Continue de onde parou</span></div>
+                    </div>
+                    <div class="vitrine__janela">
+                        <div class="vitrine__barra"><span></span><span></span><span></span></div>
+                        <div class="vitrine__corpo">
+                            <div class="vitrine__video">
+                                <span class="vitrine__play" id="icone-play"></span>
+                                <span class="vitrine__tempo"></span>
+                            </div>
+                            <div class="vitrine__lista">
+                                <div class="vitrine__item feito"><i></i>Boas-vindas</div>
+                                <div class="vitrine__item feito"><i></i>Fundamentos</div>
+                                <div class="vitrine__item atual"><i></i>Projeto prático</div>
+                                <div class="vitrine__item"><i></i>Deploy</div>
+                                <div class="vitrine__item"><i></i>Certificado</div>
+                            </div>
+                            <div class="vitrine__info"><div class="vitrine__linha"></div><div class="vitrine__linha"></div></div>
+                        </div>
+                    </div>
+                    <div class="flutuante flutuante--certificado">
+                        <span class="flutuante__icone" id="icone-certificado"></span>
+                        <div><strong>Certificado emitido</strong><span>Código verificável</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NÚMEROS DA PLATAFORMA -->
+        <section class="numeros">
+            <div class="container">
+                <div class="numeros__grade" id="numeros">
+                    <div class="numeros__item"><strong>—</strong><span>Cursos publicados</span></div>
+                    <div class="numeros__item"><strong>—</strong><span>Aulas disponíveis</span></div>
+                    <div class="numeros__item"><strong>—</strong><span>Horas de conteúdo</span></div>
+                    <div class="numeros__item"><strong>—</strong><span>Alunos ativos</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATÁLOGO (READ: lista os cursos vindos da API) -->
+        <section class="secao" id="cursos">
+            <div class="container">
+                <div class="secao__cabecalho">
+                    <span class="secao__rotulo">Catálogo</span>
+                    <h2>Escolha seu próximo curso</h2>
+                    <p>Conteúdo organizado em módulos, com aulas práticas e certificado ao final.</p>
+                </div>
+
+                <div class="filtros">
+                    <label class="entrada-icone">
+                        <span class="sr-only">Buscar cursos</span>
+                        <span id="icone-busca"></span>
+                        <input class="entrada" type="search" id="busca" placeholder="Buscar por curso, assunto ou instrutor..." autocomplete="off">
+                    </label>
+                    <select class="selecao" id="filtro-nivel" aria-label="Nível">
+                        <option value="">Todos os níveis</option>
+                        <option value="iniciante">Iniciante</option>
+                        <option value="intermediario">Intermediário</option>
+                        <option value="avancado">Avançado</option>
+                    </select>
+                    <select class="selecao" id="filtro-ordem" aria-label="Ordenar">
+                        <option value="destaque">Destaques primeiro</option>
+                        <option value="recentes">Mais recentes</option>
+                        <option value="populares">Mais populares</option>
+                        <option value="titulo">Ordem alfabética</option>
+                    </select>
+                </div>
+                <div class="fichas" id="categorias" role="group" aria-label="Categorias"></div>
+                <div class="grade-cursos" id="lista-cursos" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <!-- COMO FUNCIONA -->
+        <section class="secao secao--alternada" id="como-funciona">
+            <div class="container">
+                <div class="secao__cabecalho secao__cabecalho--centro">
+                    <span class="secao__rotulo">Como funciona</span>
+                    <h2>Três passos até o seu certificado</h2>
+                    <p>Um processo simples, com acesso liberado pela nossa equipe para garantir uma comunidade de qualidade.</p>
+                </div>
+                <div class="passos" id="passos"></div>
+            </div>
+        </section>
+
+        <!-- RECURSOS -->
+        <section class="secao">
+            <div class="container">
+                <div class="secao__cabecalho secao__cabecalho--centro">
+                    <span class="secao__rotulo">Recursos</span>
+                    <h2>Tudo o que você precisa para aprender de verdade</h2>
+                </div>
+                <div class="recursos" id="recursos"></div>
+            </div>
+        </section>
+
+        <section class="secao" id="chamada-final">
+            <div class="container">
+                <div class="chamada">
+                    <h2>Pronto para começar?</h2>
+                    <p>Crie sua conta gratuitamente. Assim que o acesso for aprovado, todos os cursos ficam disponíveis para você.</p>
+                    <div class="hero__acoes" id="chamada-acoes"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="rodape"></footer>
+</body>
+</html>

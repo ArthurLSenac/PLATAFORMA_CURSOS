@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="escuro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <script src="assets/js/tema.js"></script>
+    <link rel="stylesheet" href="assets/css/player.css">
+    <title>Assistindo — Lumina Academy</title>
+    <script type="module" src="assets/js/paginas/assistir.js"></script>
+</head>
+<body>
+    <header class="player-topo" id="player-topo"></header>
+    <div id="banner"></div>
+    <div class="player-layout">
+        <main class="player-principal" id="principal">
+            <div class="carregando-pagina"><span class="spinner"></span></div>
+        </main>
+        <aside class="player-lateral" id="lateral" aria-label="Conteúdo do curso"></aside>
+    </div>
+    <!-- gradiente usado pelo anel de progresso -->
+    <svg width="0" height="0" aria-hidden="true" focusable="false">
+        <defs><linearGradient id="gradiente-anel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c5cff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs>
+    </svg>
+</body>
+</html>

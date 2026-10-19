@@ -1,0 +1,51 @@
+/* Certificado de conclusão (tela e impressão em A4 paisagem) */
+.pagina-certificado { background: var(--fundo-2); }
+.certificado-barra { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 14px 24px; border-bottom: 1px solid var(--borda); background: color-mix(in srgb, var(--fundo) 85%, transparent); backdrop-filter: blur(12px); }
+.certificado-palco { display: grid; place-items: center; padding: 40px 20px 80px; }
+
+.certificado {
+    --ouro: #b8892d;
+    position: relative; width: min(1100px, 100%); aspect-ratio: 297 / 210; container-type: inline-size;
+    color: #1b1d29; background: #fffdf8; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 40px 100px -30px rgba(0, 0, 0, 0.6);
+}
+.certificado::before {
+    content: ""; position: absolute; inset: 2.2cqw; border: 0.18cqw solid var(--ouro); border-radius: 0.6cqw; pointer-events: none;
+    box-shadow: inset 0 0 0 0.6cqw #fffdf8, inset 0 0 0 0.75cqw color-mix(in srgb, var(--ouro) 55%, transparent);
+}
+.certificado__faixa {
+    position: absolute; left: 0; top: 0; bottom: 0; width: 9cqw;
+    background: linear-gradient(180deg, var(--primaria), color-mix(in srgb, var(--primaria) 40%, #22d3ee));
+}
+.certificado__faixa::after { content: ""; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.08) 0 0.4cqw, transparent 0.4cqw 1.2cqw); }
+.certificado__conteudo { position: absolute; inset: 5.5cqw 6cqw 5cqw 15cqw; display: flex; flex-direction: column; }
+.certificado__topo { display: flex; align-items: center; justify-content: space-between; }
+.certificado__marca { display: flex; align-items: center; gap: 1cqw; font-family: var(--fonte-titulo); font-weight: 800; font-size: 1.8cqw; color: #1b1d29; }
+.certificado__marca .marca__simbolo { width: 3.6cqw; height: 3.6cqw; border-radius: 1.1cqw; }
+.certificado__marca .marca__simbolo svg { width: 2cqw; height: 2cqw; }
+.certificado__marca img { height: 3.8cqw; width: auto; }
+.certificado__selo-topo { font-size: 1.05cqw; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ouro); font-weight: 700; }
+.certificado__titulo { margin-top: 5cqw; font-family: var(--fonte-titulo); font-size: 4.4cqw; font-weight: 800; letter-spacing: -0.02em; line-height: 1; color: #1b1d29; }
+.certificado__subtitulo { margin-top: 0.8cqw; font-size: 1.3cqw; letter-spacing: 0.32em; text-transform: uppercase; color: #6b6f85; }
+.certificado__texto { margin-top: 3.4cqw; font-size: 1.55cqw; line-height: 1.7; color: #3c4056; max-width: 62cqw; }
+.certificado__nome { display: block; margin: 0.8cqw 0 0.6cqw; font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 500; font-size: 4.6cqw; line-height: 1.15; color: #12141f; }
+.certificado__texto strong { color: #12141f; }
+.certificado__rodape { margin-top: auto; display: flex; align-items: flex-end; justify-content: space-between; gap: 3cqw; }
+.certificado__assinatura { min-width: 24cqw; text-align: center; font-size: 1.2cqw; color: #4b4f66; }
+.certificado__assinatura span { display: block; margin-bottom: 0.8cqw; font-family: "Playfair Display", Georgia, serif; font-style: italic; font-size: 2.1cqw; color: #12141f; }
+.certificado__assinatura::before { content: ""; display: block; height: 0.12cqw; margin-bottom: 0.8cqw; background: #9ea2b8; order: 2; }
+.certificado__assinatura { display: flex; flex-direction: column; }
+.certificado__assinatura span { order: 1; }
+.certificado__assinatura small { order: 3; font-size: 1.1cqw; }
+.certificado__medalha { width: 10cqw; height: 10cqw; border-radius: 50%; display: grid; place-items: center; text-align: center; color: #3b2a05; font-weight: 800; font-size: 0.95cqw; letter-spacing: 0.12em; text-transform: uppercase; background: radial-gradient(circle at 35% 30%, #fff3c4, #e9b949 45%, #b8892d 100%); box-shadow: 0 0 0 0.5cqw #fffdf8, 0 0 0 0.65cqw #d4a73f, 0 1cqw 2cqw -0.6cqw rgba(0, 0, 0, 0.4); }
+.certificado__medalha svg { display: block; width: 3.2cqw; height: 3.2cqw; margin: 0 auto 0.3cqw; }
+.certificado__verificacao { text-align: right; font-size: 1.05cqw; color: #6b6f85; line-height: 1.6; }
+.certificado__verificacao code { display: inline-block; margin-top: 0.3cqw; padding: 0.3cqw 0.8cqw; border-radius: 0.4cqw; background: #f1ede2; font-family: var(--fonte-codigo); font-size: 1.25cqw; color: #12141f; letter-spacing: 0.08em; }
+
+@media print {
+    @page { size: A4 landscape; margin: 0; }
+    html, body { background: #fff !important; }
+    .certificado-barra { display: none; }
+    .certificado-palco { padding: 0; display: block; }
+    .certificado { width: 297mm; height: 210mm; aspect-ratio: auto; box-shadow: none; border-radius: 0; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}
